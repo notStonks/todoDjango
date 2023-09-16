@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
+from .models import Task
 
-# Create your views here.
+from common.views import TitleMixin
+
+
+class IndexView(TitleMixin, TemplateView):
+    title = 'Джанго todo'
+    template_name = 'app/index.html'
